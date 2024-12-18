@@ -45,42 +45,64 @@
 
 <section class="booking">
 
-   <h1 class="heading-title">book your trip!</h1>
+   <h1 class="heading-title">Book Your Trip!</h1>
+
+   <!-- Display message if passed via query -->
+   <?php
+session_start(); // Start the session
+
+// Check if there is a message to display
+if (isset($_SESSION['message'])) :
+?>
+   <p style="color: <?= $_SESSION['message_type'] === 'success' ? 'green' : 'red'; ?>; 
+             font-weight: bold; 
+             text-align: center; 
+             margin-bottom: 20px; 
+             font-size: 1.5rem;">
+      <?= htmlspecialchars($_SESSION['message']); ?>
+   </p>
+<?php
+   // Clear the message after displaying
+   unset($_SESSION['message']);
+   unset($_SESSION['message_type']);
+endif;
+?>
+
 
    <form action="book_form.php" method="post" class="book-form">
 
       <div class="flex">
          <div class="inputBox">
             <span>name :</span>
-            <input type="text" placeholder="enter your name" name="name">
+            <input type="text" placeholder="enter your name" name="name" required>
          </div>
          <div class="inputBox">
             <span>email :</span>
-            <input type="email" placeholder="enter your email" name="email">
+            <input type="email" placeholder="enter your email" name="email" required>
          </div>
          <div class="inputBox">
             <span>phone :</span>
-            <input type="tel" placeholder="enter your number" name="phone" maxlength="10">
+            <input type="tel" placeholder="enter your number" name="phone" maxlength="10" required>
          </div>
          <div class="inputBox">
             <span>address :</span>
-            <input type="text" placeholder="enter your address" name="address">
+            <input type="text" placeholder="enter your address" name="address" required>
          </div>
          <div class="inputBox">
             <span>where to :</span>
-            <input type="text" placeholder="place you want to visit" name="location">
+            <input type="text" placeholder="place you want to visit" name="location" required>
          </div>
          <div class="inputBox">
             <span>how many :</span>
-            <input type="number" placeholder="number of guests" name="guests">
+            <input type="number" placeholder="number of guests" name="guests" required>
          </div>
          <div class="inputBox">
             <span>arrivals :</span>
-            <input type="date" name="arrivals">
+            <input type="date" name="arrivals" required>
          </div>
          <div class="inputBox">
             <span>leaving :</span>
-            <input type="date" name="leaving">
+            <input type="date" name="leaving" required>
          </div>
       </div>
 
@@ -134,21 +156,21 @@
          <h3>contact info</h3>
          <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
          <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-         <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
-         <a href="#"> <i class="fas fa-map"></i> mumbai, india - 400104 </a>
+         <a href="#"> <i class="fas fa-envelope"></i> TravelWebdevEshaanGogia@gmail.com </a>
+         <a href="#"> <i class="fas fa-map"></i> New Delhi, india - 110009 </a>
       </div>
 
       <div class="box">
          <h3>follow us</h3>
-         <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+         <a href="https://www.facebook.com/eshaan.gogia.9"> <i class="fab fa-facebook-f"></i> facebook </a>
          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-         <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+         <a href="https://www.instagram.com/eshaan_gogia/?__pwa=1"> <i class="fab fa-instagram"></i> instagram </a>
          <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
       </div>
 
    </div>
 
-   <div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
+   <div class="credit"> created by <span>Eshaan Gogia</span> | all rights reserved! </div>
 
 </section>
 
