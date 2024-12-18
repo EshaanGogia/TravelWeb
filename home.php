@@ -245,7 +245,7 @@
          <h3>contact info</h3>
          <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
          <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-         <a href="#"> <i class="fas fa-envelope"></i> eshaangogia18@gmail.com </a>
+         <a href="#"> <i class="fas fa-envelope"></i> eshaangogia19@gmail.com </a>
          <a href="#"> <i class="fas fa-map"></i> New Delhi, india - 110009 </a>
       </div>
 
